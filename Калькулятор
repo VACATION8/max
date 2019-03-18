@@ -1,0 +1,230 @@
+unit Unit1;
+
+{$mode objfpc}{$H+}
+
+interface
+
+uses
+  Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, StdCtrls,
+  Menus;
+
+type
+
+  { TForm1 }
+
+  TForm1 = class(TForm)
+    BC: TButton;
+    B1: TButton;
+    B2: TButton;
+    B3: TButton;
+    MainMenu1: TMainMenu;
+    MenuItem1: TMenuItem;
+    MenuItem10: TMenuItem;
+    Multiply: TButton;
+    Minus: TButton;
+    Plus: TButton;
+    Comma: TButton;
+    B0: TButton;
+    Equal: TButton;
+    B7: TButton;
+    B8: TButton;
+    B9: TButton;
+    Divide: TButton;
+    B4: TButton;
+    B5: TButton;
+    B6: TButton;
+    Edit1: TEdit;
+    procedure B0Click(Sender: TObject);
+    procedure B1Click(Sender: TObject);
+    procedure B2Click(Sender: TObject);
+    procedure B3Click(Sender: TObject);
+    procedure B4Click(Sender: TObject);
+    procedure B5Click(Sender: TObject);
+    procedure B6Click(Sender: TObject);
+    procedure B7Click(Sender: TObject);
+    procedure B8Click(Sender: TObject);
+    procedure B9Click(Sender: TObject);
+    procedure BCClick(Sender: TObject);
+    procedure Button1Click(Sender: TObject);
+    procedure CommaClick(Sender: TObject);
+    procedure DivideClick(Sender: TObject);
+    procedure EqualClick(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
+    procedure MenuItem10Click(Sender: TObject);
+    procedure MenuItem1Click(Sender: TObject);
+    procedure MenuItem2Click(Sender: TObject);
+    procedure MenuItem3Click(Sender: TObject);
+    procedure MenuItem4Click(Sender: TObject);
+    procedure MenuItem5Click(Sender: TObject);
+    procedure MinusClick(Sender: TObject);
+    procedure MultiplyClick(Sender: TObject);
+    procedure PlusClick(Sender: TObject);
+  private
+    { private declarations }
+  public
+    { public declarations }
+  end;
+
+var
+  Form1: TForm1;
+  a:real;b:char;c:real;
+    r:real;
+
+implementation
+
+{$R *.lfm}
+
+{ TForm1 }
+
+procedure TForm1.FormCreate(Sender: TObject);
+begin
+
+end;
+
+procedure TForm1.MenuItem10Click(Sender: TObject);
+var z: integer;
+begin
+z:= MessageDLG('Закрыть приложение? ', mtInformation, [mbOk,mbCancel],0);
+  case z of
+  mrOk: Form1.close;
+  mrCancel: exit;
+  end;
+end;
+
+procedure TForm1.MenuItem1Click(Sender: TObject);
+begin
+
+end;
+
+procedure TForm1.MenuItem2Click(Sender: TObject);
+begin
+
+
+end;
+
+procedure TForm1.MenuItem3Click(Sender: TObject);
+begin
+end;
+
+procedure TForm1.MenuItem4Click(Sender: TObject);
+begin
+end;
+
+procedure TForm1.MenuItem5Click(Sender: TObject);
+begin
+
+end;
+
+procedure TForm1.MinusClick(Sender: TObject);
+begin
+    a:=StrToFloat(Edit1.text);
+  b:='-';
+  Edit1.text:='';
+end;
+
+procedure TForm1.MultiplyClick(Sender: TObject);
+begin
+    a:=StrToFloat(Edit1.text);
+  b:='*';
+  Edit1.text:='';
+end;
+
+procedure TForm1.PlusClick(Sender: TObject);
+begin
+  a:=StrToFloat(Edit1.text);
+  b:='+';
+  Edit1.text:='';
+end;
+
+procedure TForm1.BCClick(Sender: TObject);
+begin
+  Edit1.text:='';
+end;
+
+procedure TForm1.Button1Click(Sender: TObject);
+begin
+     Edit1.text:=Edit1.text+'1';
+end;
+
+procedure TForm1.B1Click(Sender: TObject);
+begin
+  Edit1.text:=Edit1.text+'1';
+end;
+
+procedure TForm1.B0Click(Sender: TObject);
+begin
+  Edit1.text:=Edit1.text+'0';
+end;
+
+procedure TForm1.B2Click(Sender: TObject);
+begin
+  Edit1.text:=Edit1.text+'2';
+end;
+
+procedure TForm1.B3Click(Sender: TObject);
+begin
+  Edit1.text:=Edit1.text+'3';
+end;
+
+procedure TForm1.B4Click(Sender: TObject);
+begin
+  Edit1.text:=Edit1.text+'4';
+end;
+
+procedure TForm1.B5Click(Sender: TObject);
+begin
+  Edit1.text:=Edit1.text+'5';
+end;
+
+procedure TForm1.B6Click(Sender: TObject);
+begin
+  Edit1.text:=Edit1.text+'6';
+end;
+
+procedure TForm1.B7Click(Sender: TObject);
+begin
+  Edit1.text:=Edit1.text+'7';
+end;
+
+procedure TForm1.B8Click(Sender: TObject);
+begin
+  Edit1.text:=Edit1.text+'8';
+end;
+
+procedure TForm1.B9Click(Sender: TObject);
+begin
+  Edit1.text:=Edit1.text+'9';
+end;
+
+procedure TForm1.CommaClick(Sender: TObject);
+begin
+  Edit1.text:=Edit1.text+',';
+end;
+
+procedure TForm1.DivideClick(Sender: TObject);
+begin
+    a:=StrToFloat(Edit1.text);
+  b:='/';
+  Edit1.text:='';
+end;
+
+procedure TForm1.EqualClick(Sender: TObject);
+begin
+  if b='+' then begin
+    c:=a+StrToFloat(Edit1.text);
+    Edit1.text:=FloatToStr(c);
+    end;
+  if b='-' then begin
+    c:=a-StrToFloat(Edit1.text);
+    Edit1.text:=FloatToStr(c);
+    end;
+  if b='*' then begin
+    c:=a*StrToFloat(Edit1.text);
+    Edit1.text:=FloatToStr(c);
+    end;
+  if b='/' then begin
+    c:=a/StrToFloat(Edit1.text);
+    Edit1.text:=FloatToStr(c);
+    end
+  end;
+end.
